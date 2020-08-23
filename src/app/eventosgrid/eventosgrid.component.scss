@@ -1,0 +1,69 @@
+.precio {
+    color: blue;
+    font-weight: bold;
+  
+}
+
+
+.nombre {
+   
+    font-weight: bold;
+}
+
+
+
+
+mat-grid-tile.rejilla {
+    margin-top: 40px;
+
+    background-color: rgba(248, 232, 9, 0.3); 
+}
+
+
+div.divgrid {
+
+    @media (max-width: 940px)  {
+        width: 100%
+    }
+    margin: 0 auto;
+    width: 70%;
+    margin-bottom: 9rem;
+    margin-top: 5rem;
+}
+
+
+#filtro {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    width: 100%;
+ //  background-color: rgba(248, 232, 9, 0.3); 
+ background-color: wheat;
+ margin-top: 2rem;
+}
+
+
+.mat-card{
+    display:flex;
+    flex-direction: column;
+    margin-top: 0.75rem;
+    height: 25rem;
+    width: 16rem;
+  
+    
+  }
+  
+  .mat-card-header {
+    flex-shrink: 0;
+  }
+
+
+
+  
+  .mat-card-content{
+    flex-grow: 1;
+    overflow: auto;
+
+  }
+
+ 

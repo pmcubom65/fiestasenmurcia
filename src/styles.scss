@@ -1,0 +1,233 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~animate.css/animate.min';
+
+html, body { height: 100%; 
+    min-height: 100%;
+                    
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+     }
+
+
+
+     .matmenuicono {
+          width: auto;
+          max-width: 82px;
+          height: 63px;
+          float: left;
+          margin-right: 1rem;
+          margin-left: 0;
+          margin-right: 0;
+      
+          @media (max-width:764px)  {
+              margin-right: 0.15rem;
+             }
+      
+      }
+
+
+      button.fb {
+          background: url('/assets/svg/facebook.svg');
+        
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-color: blue;
+          width: 55%;
+          height: 50px;
+          min-width: 255px;
+          margin: 0 auto;
+          border: 1px solid white;
+          
+          display: block;
+        
+          
+          span {
+            
+              color: white;
+           
+        
+          }
+      }
+  
+  
+      button.gog {
+          background: url('/assets/svg/btn_google.svg');
+        
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-color: blue;
+          width: 255px;
+          min-width: 255px;
+          height: 50px;
+          border: 1px solid white;
+          color: white;
+      
+       
+          display: block
+         
+  
+          span {
+              margin-left: 35px;
+          }
+      }
+  
+  
+      .botonesreg {
+          width: 100%;
+          text-align: center;
+          margin-top: 1rem;
+      }
+
+     
+
+      .datosusuario {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+          font-size: 20px;
+          font-weight: bold;
+      }
+
+
+    
+
+
+      #datosusuarioizq {
+          width: 50%;
+          text-align: right;
+          margin-right: 0px;
+          padding-right: 0.9rem;
+      }
+
+      #datosusuarioder {
+          width: 50%;
+          text-align: left;
+          margin-left: 0px;
+          padding-left: 0.9rem;
+      }
+
+
+
+     .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: 0 auto;
+        background-color: rgba(248, 232, 9, 0.3);
+        padding: 1rem;
+    
+     
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        position: relative;
+        overflow: hidden;
+    
+    
+        @media (max-width: 1500px)  {
+            width: 95%;
+            justify-content: center;
+            overflow: hidden;
+        }
+    }
+
+
+
+    div.final {
+        position: relative;
+        height: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+
+
+    div.fin {
+        color: red;
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+        width: 70%;
+        height: 80%;
+        overflow: visible;
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        flex-wrap: nowrap;
+    
+       // background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.6));
+    
+        p.abajo {
+            margin-top: 13rem;
+        }
+    }
+
+
+
+
+    .transparente {
+        background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.6));
+    }
+
+
+
+
+    .fotoimgperfil {
+        width: 100px;
+        height: auto;
+        display:block;
+        margin: 0 auto;
+        background-color: rgba(248, 232, 9, 0.3);
+    }
+
+    .imgnowrap {
+        width: 100%;
+        flex-wrap: nowrap;
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+
+
+
+
+
+    .mat-slider.mat-slider-horizontal .mat-slider-wrapper {
+        top: 18px;
+      }
+      .mat-slider.mat-slider-horizontal .mat-slider-track-wrapper {
+        height: 12px;
+        border-radius: 10px
+      }
+      .mat-slider.mat-slider-horizontal .mat-slider-track-background,
+      .mat-slider.mat-slider-horizontal .mat-slider-track-fill {
+        height: 100%;
+      }
+      .mat-slider.mat-slider-horizontal .mat-slider-track-fill {
+        background-color: gold;
+      }
+      .mat-accent .mat-slider-thumb {
+        height: 30px;
+        width: 30px;
+        background-color: white;
+        border: solid 2px wheat;
+        bottom: -20px;
+        right: -20px;
+      }
+      .mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
+        background-color: white;
+      }
+
+      mat-slider {
+        width: 300px;
+      }
+
+
+
+
+     div.paginator {
+         margin-top: 2rem;
+        background-color: rgba(248, 232, 9, 0.3);
+         text-align: center;
+         margin: 0 auto;
+         width: 90%;
+     }

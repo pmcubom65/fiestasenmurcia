@@ -1,0 +1,79 @@
+<div id="wrap" [@fadeInOut]>
+  <div>
+    <img *ngIf="foto" src="/assets/compradetalle/{{foto}} " alt="evento">
+  </div>
+
+  <div>
+    <h1 class="mat-display-1">Espectáculo de {{tipo}}</h1>
+    <div class="botones">
+    <div >
+      <h2>Día:<span class="dia"> {{dia | date:'dd-MM-yy' }}</span></h2>   
+    </div>
+
+    <div class="dia">
+       <h2>{{dia | date:'HH:mm' }}h</h2>
+    </div>
+  </div>
+
+
+    <div id="plaza">
+     
+      <div>
+        <h2>Lugar: <span class="dia">{{nombre}}</span></h2>
+      </div>
+
+      <div class="dia"><button type="button" class="compra" [routerLink]="['/menu/plaza', plaza]"  mat-raised-button color="primary"><span>
+        <mat-icon>search</mat-icon>
+      </span> Detalles de la Plaza</button></div>
+
+
+    </div>
+
+    <h2 class="precio"> Precio: {{precio}} euros</h2> 
+
+
+
+    <p>
+    
+      <mat-button-toggle-group #group="matButtonToggleGroup"  >
+        <mat-button-toggle value="-1"  (change)="onValChange($event.value)"><span>
+          <mat-icon>remove</mat-icon>
+        </span></mat-button-toggle>
+        <mat-button-toggle disabled>{{comprado}}</mat-button-toggle>
+        <mat-button-toggle value="1" (change)="onValChange($event.value)"><span>
+          <mat-icon>add</mat-icon>
+        </span></mat-button-toggle>
+      </mat-button-toggle-group>
+    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="botones">
+      <div>
+        <button type="button"  [routerLink]="['/menu/inicio']"  class="compra" mat-raised-button color="primary">
+          Volver</button>
+      </div>
+      <div class="dia">
+        <button type="button" class="compra"  mat-raised-button color="accent" (click)="comprar(dia)"> <span>
+            <mat-icon>shopping_cart</mat-icon>
+          </span> Comprar</button>
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+<app-footer></app-footer>

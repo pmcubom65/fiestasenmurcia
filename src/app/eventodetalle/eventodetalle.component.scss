@@ -1,0 +1,107 @@
+@mixin flexplaza {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin marginleftrightcero {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
+
+div#wrap {
+    @include flexplaza();
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgba(248, 232, 9, 0.3);
+    padding: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: 1500px)  {
+        width: 95%;
+        justify-content: center;
+    }
+}
+
+img {
+    margin-right: 3rem;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    @media (max-width: 1500px)  {
+        width: 100%;
+        justify-content: center;
+        height: auto;
+        @include marginleftrightcero();
+    }
+    
+}
+
+div#plaza, div.botones {
+    @include flexplaza();
+    @media (max-width: 1500px)  {
+        width: 95%;
+        justify-content: center;
+        height: auto;
+       
+    }
+}
+
+
+.precio {
+    color: blue !important;
+    font-weight: bold !important;
+
+    @media (max-width: 1500px)  {
+        text-align:center;
+        margin-top: 1rem;
+       
+    }
+  
+}
+
+button.compra {
+    padding: 0.5rem 0.75rem 0.5rem 0.75rem !important;
+    margin-left: 0.5rem;
+    font-size: 20px;
+
+    
+}
+
+.dia {
+    margin-left: 1rem;
+   
+   
+}
+
+h1 {
+    margin-bottom: 0.5rem !important;
+
+    @media (max-width: 1500px)  {
+        text-align:center;
+     
+       
+    }
+}
+
+mat-button-toggle-group {
+    margin-left: 12px;
+
+    @media (max-width: 1500px)  {
+        width: 100%;
+        border: hidden;
+        justify-content: center;
+        height: auto;
+        @include marginleftrightcero();
+        margin-bottom: 1rem;
+    }
+  }
+
+
+  .mat-button-toggle-disabled {
+    color: black;
+    background-color: #eee;
+    font-size: 20px !important;
+}
+

@@ -1,0 +1,94 @@
+<div  *ngIf="show; else notShow">
+
+  <h1 mat-dialog-title>Login</h1>
+        <mat-divider></mat-divider>
+
+
+  <mat-accordion>
+    <mat-expansion-panel id="inicial" expanded hideToggle >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2>Usar Redes Sociales</h2>
+        </mat-panel-title>
+  
+      </mat-expansion-panel-header>
+      <div class="botonesreg">
+        <button class="gog" mat-button type="button"><span class="fbs" (click)="reggoogle()">Login con Google</span></button>
+      </div>
+      <div class="botonesreg">
+          <button class="fb" mat-button type="button"><span class="fbs" (click)="refacebook()"><span>Login con Facebook</span></span></button>
+       </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2>Usar Credenciales</h2>
+        </mat-panel-title>
+ 
+      </mat-expansion-panel-header>
+      <p  class="transparente" id="errorp" > {{mensaje}}</p>
+      <form #loginUser="ngForm" (ngSubmit)="onSubmit(loginUser.value)">
+      
+        <div mat-dialog-content>
+        
+        
+         
+          <mat-form-field  hideRequiredMarker>
+            <mat-label>Introduzca correo electrónico</mat-label>
+            <input type="email" matInput required ngModel name="email">
+            
+          </mat-form-field>
+          <mat-form-field  hideRequiredMarker>
+            <mat-label>Introduzca contraseña</mat-label>
+            <input type="password" matInput required ngModel name="password">
+        
+          </mat-form-field>
+        
+        </div>
+        <div mat-dialog-actions>
+          <button  mat-dialog-close mat-button class="notengo" (click)="abredialogoregistro()" type="button">No tengo cuenta aún</button>
+        
+
+            <button type="button" mat-raised-button (click)="cerrar()" color="accent">Cancelar</button>
+         
+            <button type="submit" mat-raised-button  color="accent">Aceptar</button>
+        </div>
+        </form>
+
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+
+
+</div>
+
+
+<ng-template #notShow>
+  <div class="final">
+ <!-- <div class="fin" *ngIf="(usuariodelabbdd | async) as usuariobd else usuariorrss">
+    
+   <p class="transparente">{{usuariobd.nombre}}</p> 
+   <p class="transparente">{{usuario.email}}</p> 
+   <img class="fotoimgperfil" [src]="usuariobd.foto">
+
+  </div>
+  <ng-template #usuariorrss>-->
+  <div class="fin">
+    
+    <p  *ngIf="usuario" class="transparente">{{usuario.nombre}}</p> 
+    <p  *ngIf="usuario" class="transparente">{{usuario.email}}</p> 
+    <img  *ngIf="usuario" class="fotoimgperfil" [src]="usuario.foto">
+ 
+   </div>
+  <!--</ng-template>-->
+
+
+  <div class="fin">
+    <p class="abajo"> {{mensaje}}</p>
+    <button type="button" mat-raised-button (click)="cerrar()" color="accent">Cerrar</button>
+  </div>
+
+</div>
+</ng-template>

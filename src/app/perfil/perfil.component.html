@@ -1,0 +1,51 @@
+
+
+<div class="wrap" [@fadeInOut]>
+  <h1  class="titulodetalleperfil mat-display-2">Perfil del Usuario</h1>
+  <div class="imgnowrap" *ngIf="MiUsuario"><img class="fotoimgperfil" [src]="MiUsuario.foto"></div> 
+<div  class="datosusuario">
+   
+    <div id="datosusuarioizq">
+     <p >Nombre del usuario:</p>
+     <p  >Email del usuario: </p>
+     <p  >Identificación del usuario:</p>
+    </div>
+    <div *ngIf="MiUsuario" id="datosusuarioder">
+     <p>{{MiUsuario.nombre}}</p> 
+     <p>  {{MiUsuario.email}}</p> 
+      <p>{{MiUsuario.uid}}</p> 
+    </div>
+ 
+     
+</div>
+
+<h2 class="titulodetalleperfil mat-display-2">Últimas compras realizadas</h2>
+
+<div *ngFor="let item of compras | async">
+
+  <div  class="datosusuario">
+   
+    <div id="datosusuarioizq">
+ 
+     <p>Identificación del usuario:</p>
+     <p>Importe:</p>
+     <p>Dia:</p>
+    </div>
+    <div  id="datosusuarioder">
+     <p>{{item.usuario}}</p> 
+     <p>  {{item.importe}}</p> 
+      <p>{{item.dia}}</p> 
+    </div>
+ 
+     
+  </div>
+
+      <div  *ngFor="let articulo of item.articulos ">
+          {{articulo | json}}
+
+      </div>
+      </div>
+
+
+</div>
+      <app-footer></app-footer>

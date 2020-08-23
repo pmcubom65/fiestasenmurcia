@@ -1,0 +1,33 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "eventos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "plaza",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "dia",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "eventos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "precio",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "dia",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

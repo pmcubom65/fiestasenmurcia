@@ -1,0 +1,247 @@
+@mixin flexconwrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+div#wrap, div#listado {
+    @include flexconwrap();
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgba(248, 232, 9, 0.3);
+    padding: 1rem;
+
+ 
+    padding-bottom: 3rem;
+    margin-bottom: 0rem;
+    position: relative;
+    overflow: hidden;
+
+
+    @media (max-width: 1100px)  {
+        width: 95%;
+        justify-content: center;
+        overflow: hidden;
+        flex-direction: column;
+    }
+}
+
+
+#det {
+   
+    margin-left: 0.5rem;
+    font-size: 20px;
+}
+
+
+div#listado {
+    justify-content: center;
+    @media (max-width: 1500px)  {
+        flex-wrap: nowrap;
+
+    }
+
+ 
+}
+
+img#primera {
+    margin-right: 3rem;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    @media (max-width: 1100px)  {
+        width: 50%;
+        margin-left: 20%;
+        display: block !important;
+
+    }
+ 
+}
+
+#primeraimagen {
+    @media (max-width: 760px)  {
+        width: 100%;
+      
+
+  
+        margin: 0 auto !important;
+        display: block;
+       
+    }
+}
+
+div#plaza, div.botones {
+    @include flexconwrap();
+    @media (max-width: 1500px)  {
+        width: 95%;
+        justify-content: center;
+        height: auto;
+       
+    }
+}
+
+
+
+button.vueltaatras {
+    padding: 0.5rem !important;
+    margin-left: 0.5rem;
+    width: 130px;
+   
+    font-size: 20px;
+    @media (max-width: 1500px)  {
+        width: 95%;
+        justify-content: center;
+        height: auto;
+        display: block;
+        margin-bottom: 3rem;
+       
+    }
+}
+
+.dia {
+    margin-left: 1rem;
+  
+   
+}
+
+h1#titulodetalle {
+
+    text-align: center;
+
+    
+    margin-bottom: 2.5rem;
+    background-color: rgba(248, 232, 9, 0.3);
+}
+
+
+div.lista {
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    flex-wrap: nowrap;
+ 
+    @media (max-width: 900px)  {
+ 
+        font-size: 1rem;
+  
+    }
+
+}
+
+.fuera {
+    @media (max-width: 1200px)  {
+        display: none;
+       
+    }
+}
+
+
+.sequeda {
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    flex-wrap: nowrap;
+
+    @media (max-width: 900px)  {
+        margin-top: 2.5rem;
+        font-size: 1rem;
+        margin-left: 0rem;
+  
+    }
+
+ 
+}
+
+.mat-tab-label {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: rgba(248, 232, 9, 0.3); //semi-transparent red
+    color: black;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border: hidden;
+}
+
+mat-tab-body-wrapper {
+    height: 100%;
+    width: 100%;
+ }
+
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: rgba(248, 232, 9, 0.3); //semi-transparent red
+    color: red;
+    font-weight: 700;
+    border: hidden;
+}
+
+/* Styles for the ink bar */
+.mat-ink-bar {
+    background-color: rgba(248, 232, 9, 0.3); //semi-transparent red
+}
+
+
+
+
+#mapacontenedor {
+    width: 92%;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    background-color: rgba(248, 232, 9, 0.3); 
+}
+
+
+.galeria {
+    height: auto;
+    width: 120px;
+
+  
+}
+
+div#galerias {
+  
+    text-align: center;
+    height: fit-content;
+    margin-right: 3.5rem;
+    margin-top: 3rem;
+ 
+    @media (max-width: 1100px)  {
+       
+        display: block;
+        
+        margin: 0 auto !important;
+    }
+
+}
+
+
+
+
+div#plazainfo {
+    margin-right: 3rem;
+
+    @media (max-width:760px)  {
+        display: block !important;
+       width: 100%;
+       height: fit-content;
+       margin-bottom: 2rem;
+
+    }
+}
+
+
+#templateimg  {
+    text-align: center;
+}
+
+
+
+

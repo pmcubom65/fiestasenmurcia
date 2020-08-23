@@ -1,0 +1,139 @@
+<div class="divgrid" [@fadeInOut] *ngIf="show; else notShow">
+
+  <div id="filtro" *ngIf="muestrofiltrado">
+    <h2>Seleccione el precio máximo</h2>
+    <mat-slider class="example-margin" max="20" min="1" step="1" value="1" thumbLabel (input)="onInputChange($event)">
+    </mat-slider>
+    <button type="button" class="action" mat-raised-button color="primary" (click)="quitarfiltro()">Quitar
+      Filtro</button>
+  </div>
+
+  <mat-grid-list class="menu" [cols]="breakpoint" ratio="1:2" rowHeight="30rem" [gutterSize]="'10px'"
+    (window:resize)="onResize($event)">
+    <div class="paginator">  <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+      nextLabel="Siguiente" class="my-pagination"></pagination-controls></div>
+  
+    <div id="cards" *ngFor="let item of eventos | async | paginate: { itemsPerPage: 6, currentPage: p }; let i=index">
+
+      <mat-grid-tile class="rejilla">
+
+        <mat-card class="example-card">
+          <mat-card-header>
+
+            <mat-card-title>{{item.tipo}}</mat-card-title>
+            <mat-card-subtitle class="nombre">{{item.nombre}}</mat-card-subtitle>
+            <mat-card-subtitle class="nombre">Día: {{item.dia | date:'dd-MM-yy HH:mm' }}</mat-card-subtitle>
+            <mat-card-subtitle class="precio">Entrada: {{item.precio}} euros</mat-card-subtitle>
+
+          </mat-card-header>
+          <img mat-card-image class="imagencarta" src="/assets/compra/{{item.foto}}" alt="evento">
+          <mat-card-content>
+
+
+
+          </mat-card-content>
+          <mat-card-actions align="end">
+
+            <button type="button" [routerLink]="['/menu/evento', item.evento_id]" class="action" mat-raised-button
+              color="primary">Detalles</button>
+            <button type="button"
+              (click)="comprar(item.evento_id, item.tipo, item.dia, item.precio, 1, item.foto, item.nombre, i)"
+              class="action" mat-raised-button color="accent">Comprar</button>
+
+
+          </mat-card-actions>
+        </mat-card>
+
+
+
+
+
+      </mat-grid-tile>
+
+    </div>
+   
+  </mat-grid-list>
+
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ng-template #notShow>
+<div class="divgrid" [@fadeInOut]>
+
+  <div id="filtro" *ngIf="muestrofiltrado">
+    <h2>Seleccione el precio máximo</h2>
+    <mat-slider class="example-margin" max="20" min="1" step="1" value="1" thumbLabel (input)="onInputChange($event)">
+    </mat-slider>
+    <button type="button" class="action" mat-raised-button color="primary" (click)="quitarfiltro()">Quitar
+      Filtro</button>
+  </div>
+
+  <mat-grid-list class="menu" [cols]="breakpoint" ratio="1:2" rowHeight="30rem" [gutterSize]="'10px'"
+    (window:resize)="onResize($event)">
+
+  
+    <div id="cards" *ngFor="let item of eventos | async; let i=index">
+
+      <mat-grid-tile class="rejilla">
+
+        <mat-card class="example-card">
+          <mat-card-header>
+
+            <mat-card-title>{{item.tipo}}</mat-card-title>
+            <mat-card-subtitle class="nombre">{{item.nombre}}</mat-card-subtitle>
+            <mat-card-subtitle class="nombre">Día: {{item.dia | date:'dd-MM-yy HH:mm' }}</mat-card-subtitle>
+            <mat-card-subtitle class="precio">Entrada: {{item.precio}} euros</mat-card-subtitle>
+
+          </mat-card-header>
+          <img mat-card-image class="imagencarta" src="/assets/compra/{{item.foto}}" alt="evento">
+          <mat-card-content>
+
+
+
+          </mat-card-content>
+          <mat-card-actions align="end">
+
+            <button type="button" [routerLink]="['/menu/evento', item.evento_id]" class="action" mat-raised-button
+              color="primary">Detalles</button>
+            <button type="button"
+              (click)="comprar(item.evento_id, item.tipo, item.dia, item.precio, 1, item.foto, item.nombre, i)"
+              class="action" mat-raised-button color="accent">Comprar</button>
+
+
+          </mat-card-actions>
+        </mat-card>
+
+
+
+
+
+      </mat-grid-tile>
+
+    </div>
+   
+  </mat-grid-list>
+
+
+  
+</div>
+</ng-template>
+
+
+<app-footer></app-footer>

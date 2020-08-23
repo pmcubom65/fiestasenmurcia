@@ -1,0 +1,157 @@
+<!--tool bar de la aplicación Marca y enlaces-->
+
+
+
+<!--sidenav de la aplicacion 3 componentes container main content-->
+<mat-sidenav-container>
+  <!--matsidenav side content-->
+  <mat-sidenav #sidenav mode="push" [opened]="opened">
+
+    <div id="cabecerasidenav">
+  
+        <div id="cabecerasidenavi">
+          <h3 class="mat-display-1">El tendido</h3>
+        </div>
+        <div id="cabecerasidenavd">
+          <img src="/assets/torobueno.png" id="ilustracionsidenav">
+        </div>
+     
+    
+    </div>
+
+    <mat-selection-list  [multiple]="false" [(ngModel)]="selectedOptions" (selectionChange)="onOptionChange($event)" (click)="onClick()">
+
+      <mat-list-option  [value]="home">
+        
+        <h3 matLine>Home</h3>
+        <mat-icon matListIcon>house</mat-icon>
+
+      </mat-list-option>
+
+
+
+
+
+
+
+
+
+
+      <mat-list-option  [value]="login">
+        
+        <h3 matLine>Login</h3>
+        <mat-icon matListIcon>login</mat-icon>
+
+      </mat-list-option>
+
+
+
+     
+      <mat-list-option  [value]="registrase">
+        
+        <h3 matLine>Mi Perfil</h3>
+        <mat-icon matListIcon>how_to_reg</mat-icon>
+        
+      </mat-list-option>
+
+     
+      <mat-list-option  [value]="logout">
+        
+        <h3 matLine>Log Out </h3>
+        <mat-icon matListIcon>cancel</mat-icon>
+        
+      </mat-list-option>
+
+
+      <mat-list-option  [value]="filtrar">
+        
+        <h3 matLine>Filtrar por precio</h3>
+        <mat-icon matListIcon>add_shopping_cart</mat-icon>
+
+      </mat-list-option>
+
+
+      <mat-list-option  [value]="traer">
+        
+        <h3 matLine>Últimos eventos</h3>
+        <mat-icon matListIcon>query_builder</mat-icon>
+
+      </mat-list-option>
+
+      <mat-list-option  [value]="cerrarnav">
+        
+        <h3 matLine>Cerrar</h3>
+        <mat-icon matListIcon>
+          exit_to_app</mat-icon>
+
+      </mat-list-option>
+
+
+    </mat-selection-list>
+    
+   
+  </mat-sidenav>
+  <!--main content-->
+  <mat-sidenav-content>
+
+    <mat-toolbar color="accent" class="navbar" [@EnterLeave]="'flyIn'">
+      <div>
+        <mat-icon (click)="sidenav.open()">menu</mat-icon>    <a id="enlaceinicio" [routerLink]="['']" >INICIO</a>
+     
+          <button id="botonicono"  [routerLink]="['/menu']"></button>
+         
+      </div>
+   
+     
+
+      <div>
+        <button mat-button [matMenuTriggerFor]="aboveMenu">PLAZAS DE TOROS</button>
+        <mat-menu  #aboveMenu="matMenu" yPosition="above">
+          <div *ngFor="let item of items | async" class="flexdiv">
+         
+            <div (click)="cambiar(item.plaza_id)"> <img class="matmenuicono" src="{{item.carro}}"></div>
+           <div (click)="cambiar(item.plaza_id)"><button class="botonesmenuplaza" mat-menu-item (click)="cambiar(item.plaza_id)">{{item.Nombre}}</button>
+     <mat-divider></mat-divider></div>
+       
+        </div>
+        
+        </mat-menu>
+
+
+        <span>{{usuario}}</span>
+
+        <span> <app-carritoicono></app-carritoicono></span>
+
+      </div>
+    </mat-toolbar>
+
+ 
+
+
+
+    <div id="logo" [@EnterLeave]="'flyIn'">
+
+
+      <div id="cajalogo1" class="cajas">
+        <h1 id="titulo" class="mat-display-4">El tendido</h1>
+      </div>
+
+      <div id="cajalogo2" class="cajas">
+        <img src="/assets/torobueno.png">
+      </div>
+
+
+    </div>
+
+
+
+
+    <router-outlet></router-outlet>
+
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+

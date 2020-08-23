@@ -1,0 +1,64 @@
+<div *ngIf="show; else notShow">
+    <form #registrarUser="ngForm"  (ngSubmit)="onSubmit(registrarUser.value)">
+  <h1 mat-dialog-title>Registrarse</h1>
+  <mat-divider></mat-divider>
+  <div mat-dialog-content>
+
+    <mat-form-field  hideRequiredMarker>
+        <mat-label>Introduzca su Nombre</mat-label>
+        <input type="text" matInput required ngModel name="nombre" >
+        <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+
+
+
+    <input #fileUpload type="file" (click)="fileUpload.value = null" (change)="importFile($event)" style="display:none"
+    accept="image/*" name="file">
+    
+    <button type="button" (click)="fileUpload.click()" mat-raised-button   color="primary" >Subir foto perfil</button>
+    <span id="nombrefoto"></span>
+
+    <img id="preview">
+
+    <mat-form-field  hideRequiredMarker>
+      <mat-label>Introduzca correo electrónico</mat-label>
+      <input type="email" matInput required ngModel name="email" >
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+    <mat-form-field  hideRequiredMarker>
+      <mat-label>Introduzca contraseña</mat-label>
+      <input type="password" matInput required ngModel name="password" >
+    </mat-form-field>
+  
+  </div>
+
+
+  <div mat-dialog-actions>
+    {{mensaje}}
+
+   <div class="botonesreg">
+      <button type="button" mat-raised-button (click)="cerrar()" color="accent" >Cancelar</button>
+      <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+      <button type="submit" mat-raised-button   color="accent" >Aceptar</button>
+    </div>
+  </div>
+  </form>
+  </div>
+
+
+  <ng-template #notShow>
+    <div class="final">
+      <div class="fin" *ngIf="usuario">
+        
+       <p>{{usuario.nombre}}</p> 
+       <p>{{usuario.email}}</p> 
+       <img  class="fotoimgperfil"  [src]="usuario.foto">
+    
+      </div>
+      <div class="fin">
+        <p class="abajo"> {{mensaje}}</p>
+        <button type="button" mat-raised-button (click)="cerrar()" color="accent">Cerrar</button>
+      </div>
+    
+    </div>
+  </ng-template>

@@ -1,0 +1,197 @@
+.navbar {
+    justify-content: space-between;
+}
+
+
+.flexdiv {
+    display: flex;
+    background-color: white;
+}
+
+mat-divider {
+    width: 650px;
+    display: block !important;
+    
+}
+
+.botonesmenuplaza {
+    padding-top: 1.2rem;
+    padding-left: 1.2rem;
+    margin-bottom: 2rem;
+    display: block !important;
+}
+
+@mixin flexnowrap {
+    display: flex;
+    flex-wrap: nowrap;  
+}
+
+
+#logo {
+    height: 15rem;
+    width: 100%;
+    background-color: gold;
+
+    @include flexnowrap();
+    margin-bottom: 1rem;
+    padding-top: 0;
+    @media (max-width: 1500px ) {
+        display: none;
+    }
+}
+
+#enlaceinicio {
+    @media (max-width: 1500px ) {
+        display: none;
+}
+
+}
+
+ button#botonicono {
+    background: url('/assets/torobueno.png') no-repeat center;
+    background-size: 100%;
+    border: none;
+    width: 52px;
+    height: 50px;
+    margin-left: 1.5rem;
+    @media (min-width: 1500px ) {
+        display: none;
+}
+}
+
+
+#ilustracionsidenav {
+    width: 52px;
+    height: auto;
+}
+
+div.cajas {
+  
+    align-self: flex-end;
+    background-color: gold;
+    flex-wrap: nowrap;  
+    flex-shrink: 1;
+    overflow: hidden;
+    
+}
+
+#cajalogo1 {
+    width: 55%;
+}
+
+#cajalogo2 {
+    width: 45%;
+}
+
+
+
+.mat-display-4, .mat-typography .mat-display-4 {
+    font: 290 100px/112px Roboto, "Helvetica Neue", sans-serif;
+    margin-top: 3rem;
+    padding-right: 1rem;
+}
+
+
+
+a {
+    text-decoration: none;
+    margin-left: 1.5rem;
+    color: black;
+}
+
+
+span {
+    padding-right: 1rem;
+}
+
+mat-sidenav-container {
+    height: 100%;
+    background-image: url('/assets/pdta.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 40% 0%;
+   
+}
+
+mat-sidenav, mat-sidenav-content {
+    padding: 0px;
+}
+
+.alert {
+    color: red;
+}
+
+
+
+
+h1#titulo {
+    white-space: nowrap;
+    text-align: right;
+    background-color: gold;
+
+
+}
+
+
+
+mat-sidenav  {
+    min-width: 200px !important;
+    width: 300px !important;
+    max-width: 400px !important;
+    background-color: indigo !important;
+
+} 
+
+mat-list-option h3 {
+    color: white;
+}
+
+mat-list-option mat-icon {
+    color: white;
+}
+
+
+div#cabecerasidenav {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    background-color: gold;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 1.5rem;
+    
+}
+
+#cabecerasidenavi {
+width: 60%;
+margin-top: 5rem;
+margin-left: 2rem;
+margin-right: 0rem;
+padding-right: 0rem;
+
+}
+
+#cabecerasidenavd {
+width: 40%;
+margin-top: 5rem;
+margin-left: 0rem;
+padding-left: 0rem;
+}
+
+.mat-menu-item{
+   
+    background-color: white !important;
+ 
+  
+    }
+
+    .mat-menu-item:hover {
+        background-color: white !important;
+    }
+
+
+
+
+
+ 

@@ -1,0 +1,36 @@
+
+<button id="carritoa" [ngClass]="crearanimacion" mat-icon-button [matMenuTriggerFor]="menuc" aria-label="Example icon-button with a menu">
+    <mat-icon  [matBadge]="total"  [matBadgeHidden]="(carrito | async)?.length==0">shopping_cart</mat-icon>
+  </button>
+
+ <mat-menu #menuc="matMenu" class="my-menu">
+
+
+    <button mat-menu-item *ngFor="let evento of carrito | async; let i=index" class="plMenuCSS" type="button" [routerLink]="['/menu/evento', evento.id]" >
+   
+      <div>
+     <img class="matmenuicono" src="/assets/compradetalle/{{evento.imagen}}">
+ 
+   
+      <span class="negrita">{{evento.datos}}   </span>
+
+
+      <span class="mostrarbadge" [matBadge]="evento.unidades" ></span>
+      <span class="azul">{{evento.precio }} euros </span>
+      <span class="azul"> x {{evento.unidades}} unidades</span>
+
+      <mat-divider></mat-divider>
+
+    </div>
+ 
+    </button>
+    
+    <div id="botoncompra"   *ngIf="(carrito | async)?.length!=0" >
+  
+    <span class="negrita">Importe total de la compra:   {{importetotal }} euros</span> 
+
+    <button type="button" id="tramitarcompra" mat-raised-button   color="accent" [routerLink]="['/menu/compra']">
+      <mat-icon>shopping_cart</mat-icon>Ver Resumen / Tramitar Compra</button>
+    </div>
+  </mat-menu>
+

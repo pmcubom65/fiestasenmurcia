@@ -1,0 +1,31 @@
+rules_version = '2';
+service cloud.firestore {
+
+  match /databases/{database}/documents {      
+    match /plazas/{docId} {        
+      allow read;     
+    }   
+    
+    
+    match /compras/{docId} {        
+      allow read: if request.auth != null; 
+      allow create: if resource.data.usuario == request.auth.uid;
+    } 
+    
+    
+    match /eventos/{docId} {        
+      allow read;
+      allow create: if request.auth.uid != null
+    } 
+    
+    
+    match /datosusuarios/{docId} {        
+      allow read;
+      allow create;
+    } 
+    
+    
+  }  
+
+
+}

@@ -1,0 +1,137 @@
+<div [@fadeInOut]>
+ <h1 id="titulodetalle" class="mat-display-2">{{nombre}}</h1>
+
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Detalles de la plaza">
+
+
+
+    <div   id="wrap" >
+     
+      <div id="primeraimagen">
+        <img id="primera" [src]="foto" alt="evento">
+        
+      </div>
+    
+      <div id="plazainfo">
+           
+               <div class="botones">
+               <div >
+                     <h2>Direccion:<span class="dia">{{direccion}}</span></h2>   
+              </div>
+    
+                <div class="dia">
+                    <h2>{{municipio }}  {{ cp }}</h2>
+                </div>
+                
+               
+             </div>
+             <div class="botones" >
+              <h2>Telefono:<span class="dia">   {{ telefono }}</span></h2>   
+          </div>
+    
+        <div>
+         
+          <div class="botones">
+            <h2>Aforo: <span class="dia">{{aforo}}</span></h2>
+          </div>
+          <div>
+            <button type="button"  (click)="goBack()"  class="vueltaatras" mat-raised-button color="primary">
+              Volver</button>
+          </div>
+    
+        </div>
+    
+    
+    
+       
+    
+      </div>
+
+      <div id="galerias"  *ngFor="let fotogaleria of fotos">
+        <div>
+        <img class="galeria" [src]="fotogaleria" (click)="aumentar(fotogaleria)" alt="fotogaleria">
+      </div>
+  
+      
+      </div>
+
+      
+    
+     
+    </div>
+    <div id="mapacontenedor">
+    <app-map *ngIf="outcoordenadas.length>0" [center]="outcoordenadas"></app-map>
+
+
+  </div>
+
+
+
+  </mat-tab>
+  <mat-tab label="Próximos Eventos de la Plaza">
+    <div class="paginator">  <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+      nextLabel="Siguiente" class="my-pagination"></pagination-controls></div>
+
+    <div  *ngFor="let item of eventos | async  | paginate: { itemsPerPage: 4, currentPage: p };">
+
+ 
+
+      <div id="listado">
+        <div > <img  src="/assets/compra/{{item.foto}}" ></div>
+
+        <div  class="sequeda">{{item.tipo}}</div>
+
+        <div  class="lista"><span class="fuera">Día:</span> {{item.dia | date:'dd-MM-yy'}}</div>
+
+        <div  class="lista"><span class="fuera">Hora:</span> {{item.dia | date:'HH:mm' }}</div>
+
+        <div  class="lista"><span class="fuera">Precio:</span> {{item.precio}}€</div>
+
+    
+
+        <div class="sequeda">   <button id="det" type="button"  [routerLink]="['/menu/evento', item.evento_id]"   mat-raised-button   color="primary" >Detalles</button></div>
+
+      </div>
+
+
+
+  
+      </div>
+
+  </mat-tab>
+  
+</mat-tab-group>
+
+
+</div>
+
+
+
+<ng-template #dialogRef let-data>
+  
+<img  [src]="data">
+
+<div id="templateimg">
+  <button type="button"  (click)="cerrardialogimg()"   mat-raised-button color="primary">
+    Volver</button>
+        
+</div>
+
+</ng-template>
+
+
+
+
+
+<app-footer></app-footer>
+
+
+
+
+
+
+
+
+
+

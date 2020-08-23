@@ -1,0 +1,56 @@
+::ng-deep .my-custom-dialog-class {
+    .mat-dialog-container {
+  
+                background: url('/assets/fondoreg.png');
+   
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 40% 0%;
+        background-color: rgb(252.7, 245.6, 142.5);
+    }
+    
+    #nombrefoto {
+        margin-left: 0.5rem;
+    }
+
+    #preview {
+        width: auto;
+        height: 82px;
+        display: block;
+        margin-top: 1rem;
+    }
+
+    .reg {
+        display: block;
+        margin: 0 auto;
+    }
+
+    span.fbs {
+        color: white;
+        margin-left: 75px;
+        white-space: nowrap;
+        font-size: 15px;
+    }
+
+
+
+    .mat-h1, .mat-headline, .mat-typography h1 {
+        font: 400 32px/32px Roboto, "Helvetica Neue", sans-serif;
+        
+    }
+    
+    
+    mat-form-field {
+        width: 100%;
+        margin-top: 2.5rem;
+        }
+
+
+
+        .mat-dialog-actions {
+            justify-content: flex-end;
+        }
+
+}
+
+
