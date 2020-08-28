@@ -5,7 +5,7 @@
 <header class="v-header container">
     <div class="fullscreen-video-wrap">
 
-   <video #vid autoplay muted="muted" loop>
+   <video #vid autoplay loop [muted]="'muted'">
     <source src="/assets/video.mp4" type="video/mp4">
 </video> 
          

@@ -35,13 +35,7 @@ export class VideoentradaComponent implements OnInit {
 
   ngAfterViewInit() {
 
-    
-    setTimeout(function(){
-      if (this.audioPlayer) {
-        this.audioPlayer.play();
-      }
-      
-  },1000);
+
   
   }
 
